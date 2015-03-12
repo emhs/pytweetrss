@@ -1,0 +1,5 @@
+click
+python-twitter
+bitly-api
+feedparser
+requests-oauthlib

@@ -1,0 +1,3 @@
+
+    [console_scripts]
+    pytweetrss=pytweetrss:main

@@ -1,0 +1,13 @@
+[General]
+url = 
+suffix = 
+overflow = ellipsis
+
+[Bit.ly]
+username = 
+api_key = 
+
+[Twitter]
+token = 
+secret = 
+

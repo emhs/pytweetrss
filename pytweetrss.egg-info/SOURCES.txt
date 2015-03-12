@@ -1,0 +1,8 @@
+pytweetrss.py
+setup.py
+pytweetrss.egg-info/PKG-INFO
+pytweetrss.egg-info/SOURCES.txt
+pytweetrss.egg-info/dependency_links.txt
+pytweetrss.egg-info/entry_points.txt
+pytweetrss.egg-info/requires.txt
+pytweetrss.egg-info/top_level.txt
