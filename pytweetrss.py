@@ -49,12 +49,11 @@ def make_tweet(entry):
 
 def parse_feed(last_seen):
     entries = poll_feed()
-    tweets = []
-    for entry in entries:
-        tweet = make_tweet(entry)
-        if tweet == last_seen:
-            break
-        tweets.append(tweet)
+    tweets = [make_tweet(entry) for entry in entries]
+    try:
+        tweets = tweets[:tweets.index(last_seen)]
+    except ValueError:
+        pass
     return(tweets)
 
 @click.command()
