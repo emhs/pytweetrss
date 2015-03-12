@@ -107,7 +107,10 @@ def main():
         twitter_secret = resp.get('oauth_token_secret')
         config.set('Twitter', 'token', twitter_token)
         config.set('Twitter', 'secret', twitter_secret)
-        config.write(conf_file)
+        with open(
+                os.path.join(
+                    os.environ['HOME'], '.pytweetrss'), 'w') as conf_file:
+            config.write(conf_file)
 
     last_seen = ''
     api = twitter.Api(consumer_key=consumer_key,
@@ -127,6 +130,11 @@ def main():
                 api.PostUpdate(tweet)
                 click.echo(tweet)
                 time.sleep(random.randint(60,180))
+            config.set('General', 'last_seen', last_seen)
+            with open(
+                    os.path.join(
+                        os.environ['HOME'], '.pytweetrss'), 'w') as conf_file:
+                config.write(conf_file)
         time.sleep(random.randint(300,600))
 
 if __name__ == "__main__":
