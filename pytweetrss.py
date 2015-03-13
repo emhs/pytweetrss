@@ -126,8 +126,11 @@ def main():
             last_seen = tweets[0]
             tweets = tweets[::-1]
             for tweet in tweets:
-                api.PostUpdate(tweet)
-                click.echo(tweet)
+                try:
+                    api.PostUpdate(tweet)
+                    click.echo(tweet)
+                except twitter.error.TwitterError:
+                    click.echo('Skipping duplicate tweet')
                 time.sleep(random.randint(60,180))
             config.set('General', 'last_seen', last_seen)
             with open(
