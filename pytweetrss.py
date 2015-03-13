@@ -83,7 +83,7 @@ def main():
         click.echo('URL below into a browser, sign in using Twitter, and')
         click.echo('retrieve the pincode provided.')
         click.echo('')
-        click.echo(url)
+        click.echo(a_url)
         click.echo('')
 
         webbrowser.open(a_url)
